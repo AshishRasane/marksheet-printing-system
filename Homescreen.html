@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+  <link rel="stylesheet" href="Homescreen_files/bootstrap.css">
+  <script src="Homescreen_files/jquery.js"></script>
+  <script src="Homescreen_files/bootstrap.js"></script>
+
+  <style>
+  .headerDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c;
+     margin-top:-120px; 
+     height:150px;
+     
+	color: #fff;
+      
+      
+}
+
+hr { 
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-style: inset;
+    border-width: 0.5px;
+	height:5px;
+	color: #000;
+    background-color: #000;
+}
+
+hr.sticky {
+  font-size: 24px;
+  line-height: 48px;
+  height: 48px;
+  background: #efc47D;
+  text-align: left;
+  padding-left: 20px;
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+
+
+
+<div class="row">
+    <div class="col-sm-2">
+    
+    
+    <img src="Homescreen_files/unilogo.png" style="border-style: solid; height:150px;">
+    <div class="headerDivider style="width: 20px"></div>
+    
+   </div>
+
+    <div class="col-sm-8"><h1 style="margin-top:80px; margin-left:50px;">Interdisciplinary School of Scientific Computing</h1>
+    
+    <div class="col-m-2">
+    <a href="logout.php">
+    <img src="Homescreen_files/logoutlogo.png" style="float:right;width:42px;height:42px; margin-top:-10%;margin-right:-150px;"></a>
+</div>
+</div> 
+  </div>
+  <div class="row">
+
+<div class="col-sm-2"></div>
+<nav style="background-color:#000; margin-bottom:2px;" class="navbar navbar-default col-sm-8">
+
+  <div class="container-fluid" >
+    
+    <ul class="nav navbar-nav navbar-center" >
+      <li><a href="Homescreen.html"  style="color:#fff;">Home</a></li>
+     
+      <li  ><a   id="add_dep" style="color:#fff; cursor:pointer;">Add Department</a></li>
+      <li ><a id="add_course" style="color:#fff; cursor:pointer;">Add Course</a></li>
+      <li><a id="add_user" style="color:#fff; cursor:pointer;">Add User</a></li>
+      <li><a id="add_Subj" style="color:#fff; cursor:pointer;">Add Subject</a></li>
+      <li><a id="add_Batch" style="color:#fff; cursor:pointer;">Add Batch</a></li>
+      <li><a id="edit" style="color:#fff; cursor:pointer;">Edit</a></li>
+      
+    </ul>
+  </div>
+</nav>
+  </div>
+
+  <hr noshade="noshade">
+  <div class="container" >
+    <div class="row">
+  
+  <center>   <div id="main_containt"   style="height:764px;" class="col-sm-8">
+</center>
+         </div>
+  </div>
+<div>
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+if ($(this).scrollTop() > 1){  
+    $('hr').addClass("sticky");
+  }
+  else{
+    $('hr').removeClass("sticky");
+  }
+});
+
+$("#add_dep").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/Department.html");
+  });
+
+  $("#add_course").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/Course.html");
+
+  });
+
+     $("#add_user").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/user.html");
+  });
+
+   
+  
+    $("#add_Subj").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/Subject.html");
+  
+
+
+  });
+     $("#add_Batch").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/Batch.html");
+  });
+    $("#edit").click(function(){
+  
+  $("#main_containt").load("http://localhost/MPSN/edit.html");
+  });
+  
+
+</script>
+
+
+</body></html>

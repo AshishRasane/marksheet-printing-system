@@ -1,0 +1,65 @@
+<html>
+
+
+<script type="text/javascript" src="jquery.js">
+	
+</script>
+<head>
+	 <style>
+  input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+	text-weight: bold
+}
+field{
+       margin-bottom:500px;
+	  
+       margin-left: 600px;
+       margin-right: 500px;
+       text-align: center;
+       text-justify: inter-word;
+	   }
+
+
+
+  </style>
+</head>
+
+<h1 style="margin-left:500px;	margin-top:150px;font-family:times new roman;font-style:bold;"> Add Batch</h1>
+
+  <div id="div1" style="margin-left:250px; margin-top:20px; width:800px; " >
+    
+                         
+                            <label  >Batch Year:</label>
+                        
+                        <input type="text"  id="batch_year"  placeholder="Enter Batch year">
+                        <br>
+     <button id="Submit" style=" background-color: blue;border: none;color: white;padding: 5px 52px 5px 52px;text-decoration: none;margin-top: 400px;cursor: pointer;" >Submit
+  </button>
+
+
+
+                 </div>
+
+<br>
+<script type="text/javascript">
+	$("#Submit").click(function(){
+       //var Batch_id=$("#batch_id").val();
+      
+       var Batch_year=$("#batch_year").val();
+       alert(Batch_year);
+         
+              $.post("addBatch.php",{Batch_year:Batch_year},function(data){
+		         
+    });
+
+	});
+</script>
+
+</body>
+</html>

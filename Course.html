@@ -1,0 +1,89 @@
+<html>
+
+
+<script type="text/javascript" src="jquery.js">
+	
+</script>
+<head>
+	 <style>
+  input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+	text-weight: bold
+}
+field{
+       margin-bottom:500px;
+	  
+       margin-left: 600px;
+       margin-right: 500px;
+       text-align: center;
+       text-justify: inter-word;
+	   }
+     input:required
+     {border:1px solid red;}
+
+
+
+  </style>
+</head>
+
+<h1 style="margin-left:500px;	margin-top:50px;font-family:times new roman;font-style:bold;"> Add Course</h1>
+
+
+ <div id="div1" style="margin-left:250px; margin-top:20px; width:800px; " >
+                         
+                            <label  >Course Name:</label>
+                        
+                        <input type="text"  id="course_name"  placeholder="Enter Course name">
+                        <br>
+                           <label  >Course year:</label>
+                        
+                        <input type="text"  id="year"  placeholder="Enter Course Year">
+                        <br>
+                       <!-- <input type="text" id="plate_num_id" name="plate_num" onblur/onfocusout="checkForRequired()"><br/><br>
+                         <input type="text" id="vehicle" />-->
+                        <button id="submit" style=" background-color: blue;border: none;color: white;padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;" >Submit</button>
+
+                        
+
+                 </div>
+
+<script type="text/javascript">
+
+$("#submit").click(function(){
+
+
+       //var course_id=$("#course_id").val();
+
+       var course_name=$("#course_name").val();
+       var year=$("#year").val();
+
+
+      if(course_name.length==0)
+      {
+        $("#course_name").css('background-color','red');
+         alert("please insert course_name");          
+     return;
+       }
+
+      if(year.length==0){
+        $("#year").css('background-color','red'); 
+         alert("please insert course_year");          
+     return;
+       }
+      $.post("addCourse.php",{course_name:course_name,year:year},function(data){
+    alert(data);
+    });
+});
+
+
+
+</script>
+
+</body>
+</html>

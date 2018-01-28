@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" href="Homescreen_files/bootstrap.css">
+   <link rel="stylesheet" href="user.css">
+  <script src="Homescreen_files/jquery.js"></script>
+  <script src="Homescreen_files/bootstrap.js"></script>
+  <script src="user.js"></script>
+
+  <style>
+  input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  text-weight: bold
+}
+field{
+       margin-bottom:500px;
+    
+       margin-left: 600px;
+       margin-right: 500px;
+       text-align: center;
+       text-justify: inter-word;
+     }
+
+input[type=submit] {
+    width: 15%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  text-weight: bold
+}
+
+
+  .headerDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c;
+     margin-top:-120px; 
+     height:150px;
+     
+  color: #fff;
+      
+      
+}
+
+hr { 
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-style: inset;
+    border-width: 0.5px;
+    height:5px;
+    color: #000;
+    background-color: #000;
+}
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+  </style>
+
+
+
+</head>
+<body>
+
+  <field>
+  <h1 style="margin-left:200px;margin-right:100px;  margin-top:0px;font-family:times new roman;font-style:bold;">Add User</h1>
+  <form action="/action_page.php">
+   <br>
+    <label style="margin-left:450px;margin-right:100px; margin-top:50px;font-family:times new roman;font-style:bold;" for="lname">User Name</label>
+    <input type="text" id="lname" name="User_name" placeholder="Enter user name">
+    <br>
+    <label style="margin-left:450px;margin-right:90px;  margin-top:50px;font-family:times new roman;font-style:bold;" for="lname">Password</label>
+    <input type="text" id="lname" name="Password" placeholder="Enter Password">
+    <br>
+  <label style="margin-left:450px;margin-right:33px;  margin-top:50px;font-family:times new roman;font-style:bold;" for="lname">Confirm Password</label>
+    <input type="text" id="lname" name="Confirm_Password" placeholder="ReEnter Password">
+    <br>
+ <div class="form-group">
+    <label style="margin-left:50px;margin-right:550px; margin-top:50px;font-family:times new roman;font-style:bold;" for="lname">Role Name</label>
+    <div class="col-md-4">
+        <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple">
+            <option value="Admin">Administrator</option><br>
+            <option value="DTE">Data Entry Operator</option><br>
+            <option value="Teacher">Teacher</option><br>
+       </select>
+    </div>
+</div>
+<!--
+    <select style="padding:0px 1200px 0px 0px; margin-left:550px;margin-right:250px;  margin-top:20px;font-family:times new roman;font-style:bold;" id="country" name="country">
+    <option  value="au">Administrator</option>
+    <option value="ca">Data Entry Operator</option>
+    <option value="usa">View</option>
+  <input style="margin-left:450px;margin-right:100px;margin-top:50px;font-family:times new roman;font-style:bold;" type="submit" value="Submit">
+  </select>
+ -->
+  <script type="text/javascript">
+$(function() {
+    $('.multiselect-ui').multiselect({
+        includeSelectAllOption: true
+    });
+});
+</script>
+ <input style="margin-left:500px;margin-right:100px;margin-top:100px;font-family:times new roman;font-style:bold;" type="submit" value="Submit">
+  </select>
+  </form>
+  </field>
+</form>
+</body></html>

@@ -1,0 +1,47 @@
+<html>
+<title>
+  Add Department
+ </title>
+<script type="text/javascript" src="jquery.js">
+	
+</script>
+
+ 
+  <!--<form action="addDepartment.php" method="post">-->
+
+  	<h1 style="margin-left:250px;  margin-top:50px;font-family:times new roman;font-style:bold;" > Add Department</h1>
+ <div id="div1" style="margin-left:50px;  margin-bottom:50px; margin-top:50px;font-family:times new roman;font-style:bold;"  >
+            
+                           
+                            <label  style="margin-left:150px;margin-right:150px;">Department Name:</label>
+                        
+                        <input type="text"  style="width: 25%;padding:5px 5px 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 3px; margin-right: 10px;box-sizing: border-box;text-weight: bold;text-justify: inter-word;"id="dept_name"   placeholder="Enter Department name">
+                        <br>
+                        
+                         <button id="add" style="background-color: black;border: none;color: white;padding: 2px 30px 2px 30px;text-decoration: none;margin: 65px 2px 0px 20px;cursor: pointer;" >Submit</button>
+          
+           
+
+                 </div>
+<script type="text/javascript">
+	$("#add").click(function(){
+       //var dept_id=$("#dept_id").val();
+       var dept_name=$("#dept_name").val();
+       
+      if(dept_name.length==0)
+      {
+        $("#dept_name").css('background-color','red');
+         alert("please insert departments_name");          
+         return;
+       }
+       $.post("addDepartment.php",{dept_name:dept_name},function(data){
+		   alert(data);
+    });
+
+
+	});
+  
+</script>
+
+</body>
+</html>

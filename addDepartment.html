@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+  <link rel="stylesheet" href="Homescreen_files/bootstrap.css">
+  <script src="Homescreen_files/jquery.js"></script>
+  <script src="Homescreen_files/bootstrap.js"></script>
+<style>
+  .headerDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c;
+     margin-top:-120px; 
+     height:150px;
+     
+	color: #fff;
+      
+      
+}
+
+hr { 
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-style: inset;
+    border-width: 0.5px;
+	height:5px;
+	color: #000;
+    background-color: #000;
+}
+fields{
+       margin-left: 500px;
+       margin-right: 500px;
+       text-align:center ;
+       text-justify: inter-word;
+	   }
+input[type=submit] {
+    width: 15%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+	text-weight: bold
+}
+ 
+  input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+	text-weight: bold
+
+
+  </style>
+  
+  </head>
+<body>
+<form action="addDepartment.php" method="post">
+<div class="row">
+    <div class="col-sm-2">
+    
+    
+    <img src="Homescreen_files/unilogo.png" style="border-style: solid; height:150px;">
+    <div class="headerDivider "></div>
+    
+   </div>
+
+    <div class="col-sm-8"><h1 style="margin-top:80px; margin-left:50px;">Interdisciplinary School of Scientific Computing</h1>
+    
+    <div class="col-m-2">
+    <a href="logout.php">
+    <img src="Homescreen_files/logoutlogo.png" style="float:right;width:42px;height:42px; margin-top:-10%;margin-right:-150px;"></a>
+</div>
+</div> 
+  </div>
+  <div class="row">
+
+<div class="col-sm-2"></div>
+<nav style="background-color:#000; margin-bottom:2px;" class="navbar navbar-default col-sm-8">
+
+  <div class="container-fluid"  ">
+    
+    <ul class="nav navbar-nav navbar-center" >
+      <li class="active"><a href="homescreen.html" style="color:#fff ; background-color: gray">Home</a></li>
+      <li ><a href="addDepartment.html" style="color:#fff;">Add Department</a></li>
+      <li><a href="addCourse.html" style="color:#fff;">Add Course</a></li>
+      <li><a href="addUser.html" style="color:#fff;">Add User</a></li>
+      <li><a href="addSubject.html" style="color:#fff;">Add Subject</a></li>
+      <li><a href="addBatch.html" style="color:#fff;">Add Batch</a></li>
+      <li><a href="edit.html" style="color:#fff;">Edit</a></li>
+      
+    </ul>
+  </div>
+</nav>
+  </div>
+<hr noshade="noshade" style="margin-bottom:26px;">
+     <div class="container">
+  </div>
+   <field>
+  <h1 style="margin-left:550px;margin-right:100px;	margin-top:50px;font-family:times new roman;font-style:bold;" >Add Department</h1>
+  <form action="addDepartment.php" method="post">
+    <label style="margin-left:450px;margin-right:100px;	margin-top:50px;font-family:times new roman;font-style:bold;" for="fname">Department Id</label>
+    <input type="text" id="Department_id" name="dept_id" placeholder="Enter Department Id ">
+	<br>
+    <label style="margin-left:450px;margin-right:80px;	margin-top:50px;font-family:times new roman;font-style:bold;" for="lname">Department Name</label>
+    <input type="text" id="Department_Nme" name="dept_name" placeholder="Enter Department name">
+    <br>
+   <input style="margin-left:550px;margin-right:100px;	margin-top:50px;font-family:times new roman;font-style:bold;" type="submit" value="Submit" >
+  </form>
+  </field>	
+
+</form>
+</body>
+</html>

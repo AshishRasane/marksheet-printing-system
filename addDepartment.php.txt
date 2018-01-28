@@ -1,0 +1,18 @@
+<?php 
+include "config.php";
+?>
+<?php
+ $dept=$_POST[$dept];
+//execute query
+
+
+
+$res=mysqli_query($connect"INSERT INTO employees1(first_name,last_name,department,email)
+  VALUES('$first_name','$last_name','$department','$email')");
+ if($res==true)
+   echo"Insert successfully";
+  else
+    echo"Error";
+	
+				
+?>

@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="jquery.js">
+	
+</script>
+<head>
+	 <style>
+  input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+	text-weight: bold
+}
+field{
+       margin-bottom:500px;
+	  
+       margin-left: 600px;
+       margin-right: 500px;
+       text-align: center;
+       text-justify: inter-word;
+	   }
+
+
+
+  
+  </style>
+</head>
+<body>
+
+
+<h1 style="margin-left:500px;	margin-top:50px;font-family:times new roman;font-style:bold;"> Add Subject</h1>
+ <label><input  type="radio" id="id_radio1" style="margin-left:500px; margin-top:20px;font-family:times new roman;font-style:bold;" name="colorRadio" > MANDATORY</label>
+        <label><input type="radio" id="id_radio2"  name="colorRadio" > ELECTIVE</label>
+          <!--<div align="center" style="padding:25px;width: 300px;">-->
+                   <div id="div1" style="margin-left:250px; margin-top:50px; width:800px; display:none;" >
+                        
+                            <label  >Subject Name:</label>
+                        
+                        <input type="text"  id="subject_name"  required placeholder="Enter subject name">
+                        <br>
+                              <label  >Credit:</label>
+                        
+                        <input type="text"  id="credit" required placeholder="Enter Credit of Subject">
+                        <br>
+                         <label  >Semester:</label>
+                        <input  type="text" id="semester" required placeholder=" Enter semester">
+                         <br>
+                         <button id="Add_mand" style=" background-color: blue;border: none;color: white;padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;" >Submit</button>
+
+
+
+                 </div>
+                  <div id="div2" style="margin-left:250px; margin-top:50px; width:800px; display:none" >
+                       
+                        <label> Elective Subject Name :</label>
+                        
+                        <input type="text" id="Esubject_name"  required placeholder="Enter subject Name">
+                        <br>
+                            <label> Elective Subject credit :</label>
+                        
+                        <input type="text" id="Esubject_credit" required  placeholder="Enter credit of subject ">
+                        <br>
+                         <label  >Semester:</label>
+                        <input  type="text" id="Esemester" required placeholder=" Enter semester">
+                         <br>
+                          <button id="Add_elec" style=" background-color: blue;border: none;color: white;padding: 16px 32px;text-decoration: none;margin: 4px 2px;cursor: pointer;" >Submit</button>
+
+
+
+              </div>
+
+
+        <script type="text/javascript">
+          //for hide and show
+           var subject_type='';
+                  $('#id_radio1').click(function () {
+                       $('#div2').hide('fast');
+                       $('#div1').show('fast');
+                       subject_type =$('#id_radio1').val();
+                       //alert(subject_type);
+
+
+                });
+                $('#id_radio2').click(function () {
+                      $('#div1').hide('fast');
+                      $('#div2').show('fast');
+                      subject_type =$('#id_radio2').val();
+                 });
+
+               //for mandatory  post
+               $('#Add_mand').click(function(){
+                  
+                         // var subject_code=$('#subject_code').val();
+                          var subject_name=$('#subject_name').val();
+                          var credit =$('#credit').val();
+                          var semester=$('#semester').val();
+                           if(subject_name.length==0)
+                        {
+                           $("#subject_name").css('border-color','red');
+                           alert("please insert subject_name");          
+                           return;
+                        }
+                             
+                           if(credit.length==0)
+                         {
+                           $("#credit").css('background-color','red');
+                            alert("please insert credit");          
+                               return;
+                           }
+
+
+
+                           if(semester.length==0)
+                         {
+                           $("#semester").css('background-color','red');
+                            alert("please insert semester");          
+                               return;
+                           }
+                            
+
+                   
+
+                          $.post("addSubject.php",{subject_type:"manadatory",subject_name:subject_name,credit:credit,semester:semester},function(data){
+                         alert(data);
+                      });
+
+
+
+
+
+                       });
+               
+
+               //for Elective  post
+               $('#Add_elec').click(function()
+               {
+                 
+                     //var Esubject_code=$('#Esubject_code').val();
+                         var  Esubject_name=$('#Esubject_name').val();
+                           var Esubject_credit =$('#Esubject_credit').val();
+                           var Esemester=$('#Esemester').val();
+
+                          $.post("addSubject.php",{Esubject_type:"elective",Esubject_name:subject_name,Esubject_credit:Esubject_credit,Esemester:semester},function(data){
+                         alert(data);
+                           
+                });
+
+
+
+               });
+            
+
+          
+
+
+
+
+       </script>
+
+
+
+
+</body>
+</html>
